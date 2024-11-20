@@ -14,7 +14,7 @@ func TestGetApiKey(t *testing.T) {
 	}
 
 	testCases := []test{
-		{input: http.Header{"Authorization": []string{"ApiKey api-key"}}, want: "api-keyx"},
+		{input: http.Header{"Authorization": []string{"ApiKey api-key"}}, want: "api-key"},
 		{input: http.Header{"Authorization": []string{"test api-key"}}, want: "", err: errors.New("malformed authorization header")},
 		{input: http.Header{}, want: "", err: ErrNoAuthHeaderIncluded},
 	}
